@@ -1,7 +1,88 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Mike Keating - Personal Website</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                line-height: 1.6;
+                max-width: 800px;
+            }
+            h1 {
+                color: #333;
+            }
+            h2 {
+                color: #555;
+                border-bottom: 2px solid #007BFF;
+                padding-bottom: 5px;
+            }
+            p {
+                color: #555;
+            }
+            a {
+                color: #007BFF;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            section {
+                margin-bottom: 30px;
+            }
+            .skills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .skill-tag {
+                background-color: #f0f0f0;
+                padding: 5px 10px;
+                border-radius: 15px;
+                font-size: 0.9em;
+            }
+        </style>
+    </head>
     <body>
         <h1>Mike Keating</h1>
         <p>Engineer | Materials Science | Data Science</p>
+
+        <section>
+            <h2>About Me</h2>
+            <p>
+                I hold a bachelor's degree in Polymer and Color Chemistry and a master's degree in Industrial Engineering, both from North Carolina State University. 
+                Currently, I work as an engineer in a mechanical testing lab, where I am passionate about lab automation through scripting and data-driven solutions.
+            </p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">MATLAB</span>
+                <span class="skill-tag">Kornucopia ML</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">Mechanical Testing</span>
+                <span class="skill-tag">Basic CAD</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Lab Automation Scripts</strong> - Python and MATLAB scripts for automating mechanical testing procedures</li>
+                <li><strong>Data Analysis Tools</strong> - Statistical analysis and visualization of testing data using R and Python</li>
+                <li><strong>ML Applications</strong> - Machine learning models for predictive analysis in materials testing</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Contact</h2>
+            <p>
+                <a href="mailto:your.email@example.com">Email Me</a> | 
+                <a href="https://www.linkedin.com/in/mike-keating" target="_blank">LinkedIn</a> | 
+                <a href="https://github.com/mike-keating-iv" target="_blank">GitHub</a>
+            </p>
+        </section>
     </body>
 </html>
