@@ -9,6 +9,13 @@ const Projects = () => {
       liveLink: "https://mike-keating-iv.shinyapps.io/RecreationFinder/",
       githubLink: "https://github.com/mike-keating-iv/recreation-finder",
       tech: ["R", "Shiny", "Data Visualization"]
+    },
+    {
+        title: "Polymer Classification",
+        description: "Machine learning model for classifying polymers based on their mechanical properties",
+        liveLink: "https://colab.research.google.com/github/mike-keating-iv/ml-polymer-classification/blob/main/polymers_classifier.ipynb",
+        githubLink: "https://github.com/mike-keating-iv/ml-polymer-classification",
+        tech: ["Python", "ML", "Data Science", "Materials Science"]
     }
   ];
 
