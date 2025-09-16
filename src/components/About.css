@@ -1,0 +1,13 @@
+.about-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Additional chains for other sections */
+.section {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  /* Responsive adjustments */
+}

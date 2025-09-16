@@ -31,6 +31,30 @@
   z-index: 2;
 }
 
+.header-content::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -150px;
+  width: 400px;
+  height: 200px;
+  opacity: 0.06;
+  background: 
+    linear-gradient(30deg, transparent 49%, rgba(64, 224, 208, 0.4) 50%, transparent 51%),
+    linear-gradient(-30deg, transparent 49%, rgba(64, 224, 208, 0.4) 50%, transparent 51%),
+    linear-gradient(60deg, transparent 49%, rgba(64, 224, 208, 0.4) 50%, transparent 51%);
+  background-size: 80px 2px, 60px 2px, 100px 2px;
+  background-position: 40px 50px, 120px 80px, 200px 60px;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: bondPulse 15s infinite ease-in-out;
+}
+
+@keyframes bondPulse {
+  0%, 100% { opacity: 0.06; }
+  50% { opacity: 0.12; }
+}
+
 .name {
   font-size: 3.5rem;
   font-weight: 200;
