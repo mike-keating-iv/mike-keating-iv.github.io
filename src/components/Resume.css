@@ -1,0 +1,447 @@
+.resume-section {
+  margin-bottom: 3rem;
+}
+
+/* Scientific Resume Type Selector */
+.resume-selector {
+  display: flex;
+  gap: 12px;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.resume-tab {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #bdc3c7;
+  border-radius: 2px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+  position: relative;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  color: #2c3e50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.resume-tab:first-child {
+  border-left: 3px solid #e74c3c;
+}
+
+.resume-tab:last-child {
+  border-left: 3px solid #3498db;
+}
+
+.resume-tab:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.resume-tab.active {
+  background: #ecf0f1;
+  border-color: #34495e;
+  color: #2c3e50;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.tab-icon {
+  font-size: 11px;
+  font-weight: normal;
+  background: #34495e;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.3px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+}
+
+.resume-tab.active .tab-icon {
+  background: #2c3e50;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.tab-title {
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 4px;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+}
+
+.tab-description {
+  color: #7f8c8d;
+  font-size: 12px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-style: italic;
+}
+
+/* Scientific Resume Container */
+.resume-container {
+  position: relative;
+}
+
+.resume-preview {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #bdc3c7;
+  border-radius: 2px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.6s ease;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  color: #2c3e50;
+}
+
+.resume-info {
+  margin-bottom: 2rem;
+}
+
+.resume-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.resume-icon {
+  font-size: 10px;
+  font-weight: normal;
+  background: #34495e;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 2px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resume-header h3 {
+  color: #1a252f;
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+}
+
+.resume-header p {
+  color: #34495e;
+  margin: 0;
+  font-size: 13px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-style: italic;
+}
+
+.resume-highlights h4 {
+  color: #2c3e50;
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #95a5a6;
+  padding-bottom: 6px;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  position: relative;
+}
+
+.resume-highlights h4::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6);
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 6px;
+}
+
+.highlight-tag {
+  background: #ecf0f1;
+  border: 1px solid #95a5a6;
+  border-radius: 2px;
+  padding: 8px 6px;
+  font-size: 11px;
+  color: #2c3e50;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInTag 0.5s ease forwards;
+  transition: all 0.2s ease;
+  font-weight: normal;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+}
+
+.highlight-tag:nth-child(6n+1) { border-left: 2px solid #e74c3c; }
+.highlight-tag:nth-child(6n+2) { border-left: 2px solid #f39c12; }
+.highlight-tag:nth-child(6n+3) { border-left: 2px solid #f1c40f; }
+.highlight-tag:nth-child(6n+4) { border-left: 2px solid #2ecc71; }
+.highlight-tag:nth-child(6n+5) { border-left: 2px solid #3498db; }
+.highlight-tag:nth-child(6n+6) { border-left: 2px solid #9b59b6; }
+
+.highlight-tag:hover {
+  background: #d5dbdb;
+}
+
+/* Scientific Resume Actions */
+.resume-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.action-btn {
+  background: #34495e;
+  border: 1px solid #34495e;
+  border-radius: 2px;
+  padding: 8px 16px;
+  color: white;
+  font-weight: normal;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  min-width: 100px;
+  justify-content: center;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.action-btn:hover {
+  background: #2c3e50;
+  border-color: #2c3e50;
+}
+
+.action-btn:active {
+  transform: translateY(1px);
+}
+
+.btn-icon {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.view-btn {
+  background: #3498db;
+  border-color: #3498db;
+}
+
+.view-btn:hover {
+  background: #2980b9;
+  border-color: #2980b9;
+}
+
+.download-btn {
+  background: #7f8c8d;
+  border-color: #7f8c8d;
+}
+
+.download-btn:hover {
+  background: #6c7b7d;
+  border-color: #6c7b7d;
+}
+
+/* PDF Modal */
+.pdf-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  animation: fadeIn 0.3s ease;
+}
+
+.pdf-container {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  width: 90vw;
+  height: 90vh;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-header {
+  background: #34495e;
+  border-bottom: 1px solid #bdc3c7;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdf-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 16px;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: transparent;
+  border: 1px solid #ecf0f1;
+  border-radius: 2px;
+  padding: 6px 12px;
+  color: #ecf0f1;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: white;
+}
+
+.pdf-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: #7f8c8d;
+  background: #f8f9fa;
+}
+
+.pdf-fallback p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+}
+
+.pdf-viewer {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+}
+
+.pdf-viewer iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.pdf-actions {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: center;
+  background: #ecf0f1;
+  border-top: 1px solid #bdc3c7;
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInTag {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .resume-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .resume-tab {
+    min-width: 260px;
+  }
+  
+  .resume-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .action-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .pdf-container {
+    width: 95vw;
+    height: 95vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-preview {
+    padding: 20px;
+  }
+  
+  .resume-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tab-content {
+    text-align: center;
+  }
+}

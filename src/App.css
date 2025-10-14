@@ -11,55 +11,114 @@
   flex: 1;
 }
 
-/* Card styles for sections */
-.section {
-  background: rgba(26, 26, 46, 0.9);
-  backdrop-filter: blur(15px);
-  border-radius: 12px;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4),
-              inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(64, 224, 208, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: #e0e6ed;
-}
-
-.section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5),
-              inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  border-color: rgba(64, 224, 208, 0.4);
-}
-
-.section h2 {
-  color: #40e0d0;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  font-weight: 300;
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: 
+    linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(248,249,250,0.9) 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 50px,
+      rgba(240,240,240,0.3) 50px,
+      rgba(240,240,240,0.3) 51px
+    );
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  margin: 0;
+  color: #2c3e50;
   position: relative;
 }
 
-.section h2::after {
+/* ROYGBIV spectrum bar */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #ff0000 0%,     /* Red */
+    #ff8000 14.3%,  /* Orange */
+    #ffff00 28.6%,  /* Yellow */
+    #00ff00 42.9%,  /* Green */
+    #0000ff 57.1%,  /* Blue */
+    #4b0082 71.4%,  /* Indigo */
+    #9400d3 85.7%,  /* Violet */
+    #ff0000 100%    /* Red again */
+  );
+  z-index: 1000;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  flex: 1;
+}
+
+/* Scientific journal panel styling */
+.section {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 32px;
+  margin: 16px;
+  position: relative;
+  color: #2c3e50;
+  border: 1px solid #e1e8ed;
+  border-radius: 3px;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  font-size: 14px;
+  line-height: 1.6;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.section:hover {
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    0 1px 4px rgba(0, 0, 0, 0.1);
+  border-color: #3498db;
+}
+
+/* Scientific journal section headers */
+.section h2 {
+  color: #1a252f;
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  letter-spacing: 0;
+  text-transform: none;
+  position: relative;
+  display: block;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #34495e;
+}
+
+.section h2::before {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: -1px;
   left: 0;
   width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, #40e0d0, #1a1a2e);
-  border-radius: 1px;
+  height: 3px;
+  background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6);
 }
 
 .section p {
-  color: #b8c5d6;
-  line-height: 1.8;
-  font-size: 1rem;
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
-  font-weight: 300;
+  color: #34495e;
+  line-height: 1.7;
+  font-size: 15px;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  font-weight: normal;
+  letter-spacing: 0;
+  text-align: justify;
+  margin-bottom: 16px;
 }
 
 /* Responsive design */
@@ -74,5 +133,142 @@
   
   .section h2 {
     font-size: 1.5rem;
+  }
+}
+
+/* Laboratory journal interface */
+.terminal-interface {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+  background: transparent;
+  margin-top: 20px; /* Account for ROYGBIV bar */
+}
+
+.tab-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px 0 16px;
+  border: 1px solid #bdc3c7;
+  border-bottom: none;
+  position: relative;
+}
+
+.tab-navigation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    #e74c3c 0%, #f39c12 16.7%, #f1c40f 33.3%, 
+    #2ecc71 50%, #3498db 66.7%, #9b59b6 83.3%, #e74c3c 100%
+  );
+}
+
+.tab-button {
+  background: #ecf0f1;
+  border: 1px solid #bdc3c7;
+  border-bottom: none;
+  color: #2c3e50;
+  padding: 10px 20px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.tab-button:hover {
+  background: #d5dbdb;
+  color: #1a252f;
+}
+
+.tab-button.active {
+  background: white;
+  color: #2c3e50;
+  border-color: #34495e;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -1px;
+  border-bottom: 1px solid white;
+}
+
+.terminal-content {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #bdc3c7;
+  min-height: 500px;
+  padding: 0;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.terminal-content .section {
+  margin: 0;
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 32px;
+}
+
+.terminal-content .section:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tab-button {
+    font-size: 12px;
+    padding: 6px 12px;
+    min-width: 80px;
+  }
+  
+  .tab-navigation {
+    padding: 6px;
+    gap: 2px;
+  }
+  
+  .terminal-interface {
+    margin: 8px;
+  }
+  
+  .header {
+    margin: 8px 8px 0 8px;
+  }
+  
+  .header-content {
+    padding: 24px 16px;
+  }
+  
+  .name {
+    font-size: 28px;
+  }
+  
+  .tagline {
+    font-size: 14px;
+  }
+  
+  .section {
+    padding: 16px;
+    margin: 8px;
+  }
+  
+  .section h2 {
+    font-size: 18px;
   }
 }

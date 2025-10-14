@@ -1,58 +1,61 @@
+/* Scientific contact section */
 .contact-intro {
-  text-align: center;
+  text-align: left;
   margin-bottom: 2rem;
-  font-size: 1rem;
-  color: #b8c5d6;
-  font-weight: 300;
+  font-size: 15px;
+  color: #34495e;
+  font-weight: normal;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  line-height: 1.7;
+  text-align: justify;
 }
 
 .contact-links {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: left;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .contact-link {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 2rem;
-  border-radius: 6px;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 2px;
   text-decoration: none;
-  font-weight: 400;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(64, 224, 208, 0.3);
-  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: normal;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #95a5a6;
+  font-family: 'Arial', 'Helvetica', sans-serif;
   letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: #ecf0f1;
+  color: #2c3e50;
 }
 
 .contact-icon {
-  font-size: 1.3rem;
+  font-size: 14px;
 }
 
 .linkedin {
-  background: linear-gradient(135deg, #0077b5, #16213e);
-  color: #e0e6ed;
+  border-left: 3px solid #3498db;
 }
 
 .linkedin:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(0, 119, 181, 0.4);
-  border-color: rgba(64, 224, 208, 0.5);
+  background: #d5dbdb;
+  border-color: #3498db;
 }
 
 .github {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: #40e0d0;
+  border-left: 3px solid #34495e;
 }
 
 .github:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 6px 20px rgba(64, 224, 208, 0.3);
-  border-color: rgba(64, 224, 208, 0.5);
+  background: #d5dbdb;
+  border-color: #34495e;
 }
 
 @media (max-width: 768px) {

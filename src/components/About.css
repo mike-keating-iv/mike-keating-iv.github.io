@@ -3,11 +3,246 @@
   overflow: hidden;
 }
 
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  text-align: left;
+  margin-bottom: 2rem;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #34495e;
+  text-align: justify;
+}
+
+.intro-text strong {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.expertise-areas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.expertise-column {
+  background: rgba(248, 249, 250, 0.8);
+  border: 1px solid #bdc3c7;
+  border-radius: 2px;
+  padding: 20px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.expertise-column:first-child {
+  border-left: 3px solid #3498db;
+}
+
+.expertise-column:last-child {
+  border-left: 3px solid #e74c3c;
+}
+
+.expertise-column:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.expertise-column h3 {
+  color: #2c3e50;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  border-bottom: 1px solid #95a5a6;
+  padding-bottom: 6px;
+}
+
+.expertise-column p {
+  line-height: 1.7;
+  color: #34495e;
+  font-size: 14px;
+  text-align: justify;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+}
+
+.expertise-column strong {
+  color: #2c3e50;
+  font-weight: bold;
+}
+
 /* Additional chains for other sections */
 .section {
   position: relative;
 }
 
+.skills-section {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #bdc3c7;
+  position: relative;
+}
+
+.skills-section::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, #e74c3c, #f39c12, #f1c40f, #2ecc71, #3498db, #9b59b6);
+}
+
+.skills-section h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Times New Roman', 'Liberation Serif', serif;
+  text-align: left;
+}
+
 @media (max-width: 768px) {
-  /* Responsive adjustments */
+  .expertise-areas {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .expertise-column {
+    padding: 1.5rem;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+}
+
+/* Technical Chameleon Effect */
+.technical-chameleon {
+  font-weight: bold;
+  background: linear-gradient(
+    45deg,
+    #e74c3c,
+    #f39c12,
+    #f1c40f,
+    #2ecc71,
+    #3498db,
+    #9b59b6,
+    #e74c3c
+  );
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: chameleonShift 8s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes chameleonShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 25% 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 75% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Software Icons */
+.software-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.software-icon {
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+  animation: fadeInIcon 0.6s ease-out forwards;
+  transition: transform 0.2s ease;
+}
+
+.software-icon:nth-child(1) { animation-delay: 0.2s; }
+.software-icon:nth-child(2) { animation-delay: 0.4s; }
+.software-icon:nth-child(3) { animation-delay: 0.6s; }
+.software-icon:nth-child(4) { animation-delay: 0.8s; }
+
+.software-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Stress-Strain Chart Visualization */
+.stress-strain-visualization {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.stress-strain-chart {
+  width: 100px;
+  height: 70px;
+  opacity: 0;
+  animation: fadeInChart 1s ease-in-out 0.3s forwards;
+}
+
+.strain-curve {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  opacity: 0;
+  animation: drawStrainCurve 2s ease-out forwards;
+}
+
+.chart-label {
+  font-size: 9px;
+  fill: #34495e;
+  font-family: 'Times New Roman', serif;
+  font-style: italic;
+  opacity: 0;
+  animation: fadeInLabel 0.5s ease-out 2.5s forwards;
+}
+
+@keyframes fadeInChart {
+  to { opacity: 1; }
+}
+
+@keyframes drawStrainCurve {
+  to { 
+    opacity: 1;
+    stroke-dashoffset: 0; 
+  }
+}
+
+@keyframes fadeInLabel {
+  to { opacity: 1; }
+}
+
+@keyframes fadeInIcon {
+  0% { 
+    opacity: 0; 
+    transform: translateY(10px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
 }
