@@ -10,32 +10,43 @@ const About = () => {
       modules: ['Instron Test Development', 'ASTM Standards', 'Basic CAD', 'Finite Element Analysis']
     },
     {
-      name: 'Python - Data Wrangling',
-      modules: ['pandas', 'numpy', 'openpyxl', 'scipy']
+      name: 'Data Wrangling & Analysis',
+      modules: [
+        'pandas (Python)', 'numpy (Python)', 'dplyr (R)', 'tidyr (R)', 
+        'Data Tables (MATLAB)', 'openpyxl (Python)', 'scipy (Python)'
+      ]
     },
     {
-      name: 'Python - Visualization', 
-      modules: ['matplotlib', 'seaborn', 'plotly']
+      name: 'Data Visualization',
+      modules: [
+        'matplotlib (Python)', 'seaborn (Python)', 'plotly (Python)', 
+        'ggplot2 (R)', 'MATLAB Plots', 'Interactive Dashboards'
+      ]
     },
     {
-      name: 'Python - Machine Learning',
-      modules: ['sklearn', 'tensorflow', 'scipy.stats']
+      name: 'Machine Learning & Statistics',
+      modules: [
+        'sklearn (Python)', 'tensorflow (Python)', 'XGBoost (Python)',
+        'Kornucopia ML (MATLAB)', 'Statistical Modeling (R)', 'scipy.stats (Python)'
+      ]
     },
     {
-      name: 'Python - Automation',
-      modules: ['File Operations', 'Microsoft Graph API', 'GUI Development', 'Task Scheduling']
+      name: 'Automation & APIs',
+      modules: [
+        'File Operations (Python)', 'Microsoft Graph API (Python)', 'REST APIs (R)', 
+        'GUI Development (Python/MATLAB)', 'Task Scheduling', 'Web Scraping (Python)'
+      ]
     },
     {
-      name: 'MATLAB',
-      modules: ['App Designer', 'Data Analysis', 'Curve Fitting', 'Kornucopia ML']
-    },
-    {
-      name: 'R',
-      modules: ['ggplot2', 'dplyr', 'tidyr', 'shiny', 'plumber']
+      name: 'Web Development',
+      modules: [
+        'shiny (R)', 'plumber (R)', 'React (JavaScript)', 
+        'Docker Containers', 'GitHub Pages', 'Interactive Apps'
+      ]
     },
     {
       name: 'Database & Engineering Software',
-      modules: ['Database Design', 'Microsoft SQL Server', 'Ansys Granta MI', 'Datacolor']
+      modules: ['Database Design', 'Microsoft SQL Server', 'Ansys Granta MI', 'Datacolor', 'Git Version Control']
     }
   ];
 
@@ -133,6 +144,12 @@ const About = () => {
               </div>
               
               {/* Stress-strain curves */}
+              <a 
+                href="https://www.youtube.com/watch?v=aQf6Q8t1FQE&themeRefresh=1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="chart-link"
+              >
               <div className="stress-strain-visualization">
                 <svg className="stress-strain-chart" viewBox="0 0 100 70" xmlns="http://www.w3.org/2000/svg">
                 <defs>
@@ -199,6 +216,7 @@ const About = () => {
                 <text x="5" y="15" className="chart-label" transform="rotate(-90, 5, 15)">σ</text>
               </svg>
               </div>
+              </a>
             </div>
           </div>
           <div className="expertise-column">
@@ -209,15 +227,36 @@ const About = () => {
               I leverage Python, MATLAB, and Kornucopia ML to improve mechanical testing workflows and deliver insights from a variety of tests, including tensile, compression, and bending.
             </p>
             
-            {/* Software Icons */}
+            {/* Software Icons - Animated for Engineering Workflows */}
             <div className="software-icons">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="software-icon" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" className="software-icon" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" className="software-icon" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" className="software-icon" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="software-icon" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" className="software-icon" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="software-icon" />
+              <div className="icon-wrapper" title="Data Analysis & ML Workflows">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="software-icon python-processing" />
+                <div className="processing-indicator"></div>
+              </div>
+              <div className="icon-wrapper" title="Statistical Analysis & Visualization">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" className="software-icon r-analyzing" />
+                <div className="data-flow"></div>
+              </div>
+              <div className="icon-wrapper" title="Engineering Simulations & GUI Tools">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" className="software-icon matlab-computing" />
+                <div className="computation-waves"></div>
+              </div>
+              <div className="icon-wrapper" title="Materials Database Management">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server" className="software-icon sql-querying" />
+                <div className="database-pulse"></div>
+              </div>
+              <div className="icon-wrapper" title="Version Control & Collaboration">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" className="software-icon git-syncing" />
+                <div className="sync-indicator"></div>
+              </div>
+              <div className="icon-wrapper" title="Containerized Deployment">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" className="software-icon docker-deploying" />
+                <div className="container-stack"></div>
+              </div>
+              <div className="icon-wrapper" title="Interactive Engineering Dashboards">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" className="software-icon react-building" />
+                <div className="component-assembly"></div>
+              </div>
             </div>
           </div>
         </div>
