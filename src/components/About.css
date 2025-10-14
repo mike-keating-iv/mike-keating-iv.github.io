@@ -191,9 +191,152 @@
   transform: scale(1.1);
 }
 
+/* Materials Visualizations Container */
+.materials-visualizations {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 15px 0;
+}
+
+/* Materials Science Pyramid */
+.materials-pyramid {
+  display: flex;
+  justify-content: center;
+}
+
+.pyramid-chart {
+  width: 120px;
+  height: 100px;
+  opacity: 0;
+  animation: fadeInChart 1s ease-in-out 0.2s forwards;
+}
+
+.pyramid-face {
+  opacity: 0;
+  animation: fadeInFace 0.8s ease-out forwards;
+}
+
+.pyramid-face:nth-child(7) { animation-delay: 0.5s; }  /* Processing */
+.pyramid-face:nth-child(8) { animation-delay: 0.7s; }  /* Properties */
+.pyramid-face:nth-child(9) { animation-delay: 0.9s; }  /* Structure */
+.pyramid-face:nth-child(10) { animation-delay: 1.1s; } /* Performance */
+
+.base-face {
+  animation-delay: 1.3s !important;
+}
+
+.base-top {
+  animation-delay: 0.5s !important;
+}
+
+.base-right-edge {
+  animation-delay: 0.6s !important;
+}
+
+.base-back-edge {
+  animation-delay: 0.7s !important;
+}
+
+.base-bottom-edge {
+  animation-delay: 0.8s !important;
+}
+
+.base-left-edge {
+  animation-delay: 0.9s !important;
+}
+
+.base-front-edge {
+  animation-delay: 1.0s !important;
+}
+
+.left-face {
+  opacity: 0.9;
+  animation-delay: 0.8s;
+}
+
+.back-face {
+  opacity: 0.6;
+  animation-delay: 0.7s;
+}
+
+.main-face {
+  opacity: 1;
+  animation-delay: 1.1s;
+}
+
+.side-face {
+  opacity: 0.8;
+  animation-delay: 0.9s;
+}
+
+.pyramid-edge {
+  opacity: 0;
+  animation: drawConnection 0.8s ease-out forwards;
+}
+
+.pyramid-edge:nth-child(7) { animation-delay: 0.3s; }
+.pyramid-edge:nth-child(8) { animation-delay: 0.4s; }
+.pyramid-edge:nth-child(9) { animation-delay: 0.5s; }
+.pyramid-edge:nth-child(10) { animation-delay: 0.6s; }
+
+.face-label {
+  font-size: 7px;
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-weight: 600;
+  opacity: 0;
+  animation: fadeInLabel 0.5s ease-out forwards;
+  text-shadow: 1px 1px 2px rgba(255,255,255,0.9);
+}
+
+.processing-label {
+  fill: #c0392b;
+  animation-delay: 0.8s;
+}
+
+.properties-label {
+  fill: #2980b9;
+  animation-delay: 1s;
+}
+
+.structure-label {
+  fill: #e67e22;
+  font-weight: bold;
+  animation-delay: 1.2s;
+}
+
+.performance-label {
+  fill: #8e44ad;
+  animation-delay: 1.4s;
+}
+
+.properties-label {
+  fill: #666;
+  animation-delay: 1.5s;
+}
+
+.sustainability-label {
+  font-size: 8px;
+  fill: #27ae60;
+  font-weight: bold;
+  animation-delay: 1.6s;
+}
+
+.label-pointer {
+  opacity: 0;
+  animation: fadeInLabel 0.5s ease-out forwards;
+}
+
+.label-pointer:nth-child(21) { animation-delay: 1.8s; } /* Processing */
+.label-pointer:nth-child(22) { animation-delay: 1.9s; } /* Properties */
+.label-pointer:nth-child(23) { animation-delay: 2.0s; } /* Structure */
+.label-pointer:nth-child(24) { animation-delay: 2.1s; } /* Performance */
+.label-pointer:nth-child(25) { animation-delay: 2.2s; } /* Sustainability */
+
 /* Stress-Strain Chart Visualization */
 .stress-strain-visualization {
-  margin: 15px 0;
   display: flex;
   justify-content: center;
 }
@@ -236,6 +379,38 @@
   to { opacity: 1; }
 }
 
+@keyframes drawConnection {
+  0% {
+    opacity: 0;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+  }
+  100% {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fadeInNode {
+  0% { 
+    opacity: 0; 
+    transform: scale(0);
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInFace {
+  0% { 
+    opacity: 0;
+  }
+  100% { 
+    opacity: 1;
+  }
+}
+
 @keyframes fadeInIcon {
   0% { 
     opacity: 0; 
@@ -245,4 +420,25 @@
     opacity: 1; 
     transform: translateY(0);
   }
+}
+
+/* Clickable pyramid link styling */
+.materials-pyramid a {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.materials-pyramid a:hover {
+  transform: scale(1.05);
+}
+
+.materials-pyramid a:hover .pyramid-face {
+  filter: brightness(1.1);
+}
+
+.materials-pyramid a:hover .face-label {
+  fill: #2c3e50;
+  font-weight: bold;
 }

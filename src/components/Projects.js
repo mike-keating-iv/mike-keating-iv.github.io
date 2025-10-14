@@ -8,14 +8,28 @@ const Projects = () => {
       description: "R Shiny web application for finding public recreational activities and locations in the United States",
       liveLink: "https://mike-keating-iv.shinyapps.io/RecreationFinder/",
       githubLink: "https://github.com/mike-keating-iv/recreation-finder",
-      tech: ["R", "Shiny", "Data Visualization"]
+      tech: ["R", "Shiny", "Leaflet", "API Integration", "Interactive Maps", "Data Tables"]
     },
     {
         title: "Polymer Classification",
         description: "Machine learning model for classifying polymers based on their mechanical properties",
         liveLink: "https://colab.research.google.com/github/mike-keating-iv/ml-polymer-classification/blob/main/polymers_classifier.ipynb",
         githubLink: "https://github.com/mike-keating-iv/ml-polymer-classification",
-        tech: ["Python", "ML", "Data Science", "Materials Science"]
+        tech: ["Python", "XGBoost", "Scikit-learn", "Materials Science", "Hyperparameter Tuning", "Model Validation"]
+    },
+    {
+        title: "Diabetes Prediction API",
+        description: "End-to-end machine learning project featuring EDA, model comparison (logistic regression, decision tree, random forest), REST API development, and Docker containerization for diabetes risk prediction",
+        liveLink: "https://mike-keating-iv.github.io/st558-final-project/",
+        githubLink: "https://github.com/mike-keating-iv/st558-final-project",
+        tech: ["R", "Machine Learning", "API Development", "Docker", "Healthcare Analytics"]
+    },
+    {
+        title: "Dumb Data Science - Hardee's & Carl's Jr",
+        description: "A silly data science project born from a 2009 Boy Scout road trip question: 'What's the shortest path between a Hardee's and Carl's Jr?' Features web scraping and geospatial analysis.",
+        liveLink: "https://colab.research.google.com/github/mike-keating-iv/dumb-data-hardees/blob/main/dumb-data-hardees.ipynb",
+        githubLink: "https://github.com/mike-keating-iv/dumb-data-hardees",
+        tech: ["Python", "Web Scraping", "Geospatial Analysis", "Beautiful Soup", "Jupyter Notebook"]
     }
   ];
 
