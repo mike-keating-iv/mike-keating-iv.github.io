@@ -307,6 +307,96 @@ const About = () => {
                 <div className="component-assembly"></div>
               </div>
             </div>
+            
+            {/* Python Database Pipeline Animation */}
+            <div className={`data-pipeline ${animationTriggers.softwareIcons ? 'animate-in' : ''}`}>
+              <div className="pipeline-container">
+                <div className="raw-data-pile">
+                  <span className="data-scribble">σ</span>
+                  <span className="data-scribble">45.2</span>
+                  <span className="data-scribble">test.xlsx</span>
+                  <span className="data-scribble">ε</span>
+                  <span className="data-scribble">0.03</span>
+                  <span className="data-scribble">sample.csv</span>
+                  <span className="data-scribble">MPa</span>
+                  <span className="data-scribble">instron.is_tens_RawData</span>
+                  <span className="data-scribble">temp</span>
+                  <span className="data-scribble">23°</span>
+                  <span className="data-scribble">%</span>
+                  <span className="data-scribble">batch_A.xls</span>
+                  <span className="data-scribble">μ</span>
+                  <span className="data-scribble">Δ</span>
+                </div>
+                
+                <div className="transform-arrow">→</div>
+                
+                <div className="clean-dashboard">
+                  <div className="gui-window">
+                    <div className="gui-titlebar">
+                      <div className="window-controls">
+                        <span className="control-dot red"></span>
+                        <span className="control-dot yellow"></span>
+                        <span className="control-dot green"></span>
+                      </div>
+                    </div>
+                    <div className="gui-content">
+                      <div className="distribution-plot">
+                        <div className="plot-area">
+                          <svg className="kde-svg" viewBox="0 0 100 60" preserveAspectRatio="xMidYMid meet">
+                            <defs>
+                              <linearGradient id="blueDistribution" x1="0%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" stopColor="rgba(52, 152, 219, 0.7)" />
+                                <stop offset="100%" stopColor="rgba(52, 152, 219, 0.2)" />
+                              </linearGradient>
+                              <linearGradient id="orangeDistribution" x1="0%" y1="100%" x2="0%" y2="0%">
+                                <stop offset="0%" stopColor="rgba(230, 126, 34, 0.7)" />
+                                <stop offset="100%" stopColor="rgba(230, 126, 34, 0.2)" />
+                              </linearGradient>
+                            </defs>
+                            
+                            {/* Blue distribution (Lunch) */}
+                            <path 
+                              d="M 10 55 Q 20 45 25 35 Q 30 25 35 20 Q 40 15 45 18 Q 50 25 55 35 Q 60 45 70 55" 
+                              fill="url(#blueDistribution)" 
+                              stroke="rgba(52, 152, 219, 0.8)" 
+                              strokeWidth="1"
+                              className="distribution-curve blue-dist"
+                            />
+                            
+                            {/* Orange distribution (Dinner) */}
+                            <path 
+                              d="M 25 55 Q 30 50 35 40 Q 40 30 45 25 Q 50 20 55 22 Q 60 28 65 38 Q 70 48 80 55" 
+                              fill="url(#orangeDistribution)" 
+                              stroke="rgba(230, 126, 34, 0.8)" 
+                              strokeWidth="1"
+                              className="distribution-curve orange-dist"
+                            />
+                            
+                            {/* Axes */}
+                            <line x1="10" y1="55" x2="85" y2="55" stroke="#7f8c8d" strokeWidth="0.5"/>
+                            <line x1="10" y1="55" x2="10" y2="10" stroke="#7f8c8d" strokeWidth="0.5"/>
+                          </svg>
+                        </div>
+                        <div className="plot-legend">
+                          <div className="legend-item">
+                            <div className="legend-color blue"></div>
+                            <span>Group A</span>
+                          </div>
+                          <div className="legend-item">
+                            <div className="legend-color orange"></div>
+                            <span>Group B</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="dashboard-actions">
+                        <div className="email-icon">✉</div>
+                        <div className="export-btn"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
