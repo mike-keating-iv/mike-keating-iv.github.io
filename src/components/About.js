@@ -1,9 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './About.css';
 import './Skills.css';
 
 const About = () => {
   const [expandedSkill, setExpandedSkill] = useState(null);
+  const [animationTriggers, setAnimationTriggers] = useState({
+    materialsViz: false,
+    softwareIcons: false,
+    skillsSection: false
+  });
+  
+  const materialsRef = useRef(null);
+  const softwareRef = useRef(null);
+  const skillsRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            if (target === materialsRef.current) {
+              setAnimationTriggers(prev => ({ ...prev, materialsViz: true }));
+            } else if (target === softwareRef.current) {
+              setAnimationTriggers(prev => ({ ...prev, softwareIcons: true }));
+            } else if (target === skillsRef.current) {
+              setAnimationTriggers(prev => ({ ...prev, skillsSection: true }));
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.2, // Trigger when 20% of the element is visible
+        rootMargin: '0px 0px -50px 0px' // Start animation slightly before fully visible
+      }
+    );
+
+    // Store current ref values
+    const materialsElement = materialsRef.current;
+    const softwareElement = softwareRef.current;
+    const skillsElement = skillsRef.current;
+
+    // Observe elements when they're available
+    if (materialsElement) observer.observe(materialsElement);
+    if (softwareElement) observer.observe(softwareElement);
+    if (skillsElement) observer.observe(skillsElement);
+
+    return () => {
+      if (materialsElement) observer.unobserve(materialsElement);
+      if (softwareElement) observer.unobserve(softwareElement);
+      if (skillsElement) observer.unobserve(skillsElement);
+    };
+  }, []);
+
   const skills = [
     {
       name: 'Mechanical Engineering',
@@ -56,7 +105,7 @@ const About = () => {
       <div className="about-content">
         <div className="intro-text">
           <p>
-           I’m Mike, an Engineer at BD with a background in Polymer and Color Chemistry (BS) and Industrial Engineering (MS) from NC State. I enjoy working at the intersection of hands-on engineering and digital technology, always exploring new systems and processes to figure out which knobs to turn.
+           Hi! I'm Mike, an engineer at BD with a background in Polymer and Color Chemistry (BS) and Industrial Engineering (MS) from NC State. I’m passionate about figuring out how things work—from material characterization to coding and automation. Outside of work, I love exploring Durham’s food scene, catching Bulls games and DPAC shows, collecting vinyl, and playing Magic: The Gathering. 
           </p>
         </div>
 
@@ -68,7 +117,7 @@ const About = () => {
             </p>
             
             {/* Materials Science Visualizations */}
-            <div className="materials-visualizations">
+            <div className={`materials-visualizations ${animationTriggers.materialsViz ? 'animate-in' : ''}`} ref={materialsRef}>
               {/* Materials Science Pyramid */}
               <div className="materials-pyramid">
                 <a href="https://pubs.acs.org/doi/10.1021/acs.jchemed.9b00016" target="_blank" rel="noopener noreferrer" className="pyramid-link">
@@ -228,7 +277,7 @@ const About = () => {
             </p>
             
             {/* Software Icons - Animated for Engineering Workflows */}
-            <div className="software-icons">
+            <div className={`software-icons ${animationTriggers.softwareIcons ? 'animate-in' : ''}`} ref={softwareRef}>
               <div className="icon-wrapper" title="Data Analysis & ML Workflows">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" className="software-icon python-processing" />
                 <div className="processing-indicator"></div>
@@ -263,7 +312,7 @@ const About = () => {
 
 
 
-        <div className="skills-section">
+        <div className={`skills-section ${animationTriggers.skillsSection ? 'animate-in' : ''}`} ref={skillsRef}>
           <h3>Technical Skills</h3>
           <div className="skills">
             {skills.map((skill, index) => (
