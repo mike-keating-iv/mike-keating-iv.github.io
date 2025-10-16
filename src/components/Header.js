@@ -18,6 +18,7 @@ const Header = () => {
           <div className="profile-info">
             <h1 className="name">Mike Keating</h1>
             <p className="tagline">Interdisciplinary Engineer | Lab Automation | Materials Characterization</p>
+            <p className="location">Durham, NC</p>
             <div className="tagline-contacts">
               <a 
                 href="https://www.linkedin.com/in/mike-keating-32a48a102/" 
