@@ -675,3 +675,103 @@
   fill: #2c3e50;
   font-weight: bold;
 }
+
+/* Scroll-triggered animations */
+.materials-visualizations {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.materials-visualizations.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.software-icons {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.software-icons.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.skills-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Pause individual icon animations until parent is triggered */
+.icon-wrapper {
+  animation-play-state: paused;
+}
+
+.software-icons.animate-in .icon-wrapper {
+  animation-play-state: running;
+}
+
+/* Pause strain curve animations until triggered */
+.strain-curve {
+  animation-play-state: paused;
+}
+
+.materials-visualizations.animate-in .strain-curve {
+  animation-play-state: running;
+}
+
+/* Pause pyramid face animations until triggered */
+.pyramid-face {
+  animation-play-state: paused;
+}
+
+.materials-visualizations.animate-in .pyramid-face {
+  animation-play-state: running;
+}
+
+/* Pause software icon specific animations until triggered */
+.python-processing, .r-analyzing, .matlab-computing, .sql-querying, .git-syncing, .docker-deploying, .react-building {
+  animation-play-state: paused;
+}
+
+.software-icons.animate-in .python-processing,
+.software-icons.animate-in .r-analyzing,
+.software-icons.animate-in .matlab-computing,
+.software-icons.animate-in .sql-querying,
+.software-icons.animate-in .git-syncing,
+.software-icons.animate-in .docker-deploying,
+.software-icons.animate-in .react-building {
+  animation-play-state: running;
+}
+
+/* Pause indicator animations until triggered */
+.processing-indicator, .data-flow, .computation-waves, .database-pulse, .sync-indicator, .container-stack, .component-assembly {
+  animation-play-state: paused;
+}
+
+.software-icons.animate-in .processing-indicator,
+.software-icons.animate-in .data-flow,
+.software-icons.animate-in .computation-waves,
+.software-icons.animate-in .database-pulse,
+.software-icons.animate-in .sync-indicator,
+.software-icons.animate-in .container-stack,
+.software-icons.animate-in .component-assembly {
+  animation-play-state: running;
+}
+
+/* Pause skill card animations until triggered */
+.skill-card {
+  animation-play-state: paused;
+}
+
+.skills-section.animate-in .skill-card {
+  animation-play-state: running;
+}
