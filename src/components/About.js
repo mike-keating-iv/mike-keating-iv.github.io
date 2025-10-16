@@ -56,7 +56,7 @@ const About = () => {
       <div className="about-content">
         <div className="intro-text">
           <p>
-           I’m Mike, an Engineer at BD with a background in Polymer and Color Chemistry (BS) and Industrial Engineering (MS) from NC State. I thrive at the intersection of hands-on engineering and digital technology, always exploring new systems and processes to figure out which knobs to turn.
+           I’m Mike, an Engineer at BD with a background in Polymer and Color Chemistry (BS) and Industrial Engineering (MS) from NC State. I enjoy working at the intersection of hands-on engineering and digital technology, always exploring new systems and processes to figure out which knobs to turn.
           </p>
         </div>
 
